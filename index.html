@@ -39,6 +39,20 @@
             ул. Тракторостроителей,
             12, оф. 134
         </div>
+        <div class="header__menu">
+            <ul>
+                <li><a href="#">Наши услуги</a></li>
+                <li><a href="#">Акции</a></li>
+                <li><a href="#">Доставка</a></li>
+                <li><a href="#">Портфолио</a></li>
+                <li><a href="#">Сертификаты</a></li>
+                <li><a href="#">Отзывы</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </div>
+        <div class="header__modal">
+            <button onClick="getElementById('win').removeAttribute('style');" type="button">заказать звонок</button>
+        </div>
     </div>
 </header>
 
@@ -61,7 +75,22 @@
 
 <!-- start footer.html-->
 <footer>
-    my footer
+    <div id="win" style="display: none">
+        <div class="overlay"></div>
+        <div class="visible">
+            <h2>Оставьте Вашу заявку, и мы свяжемся с вами <br>
+                в течении дня</h2>
+            <div class="content">
+                <form action="#">
+                    <input type="text" name="v_name" placeholder="Ваше имя" required>
+                    <input type="text" name="v_phone" placeholder="Номер телефона" required>
+                    <button type="submit">Отправить</button>
+                </form>
+            </div>
+            <a href="#" onClick="getElementById('win').style.display='none';"><i class="fa fa-2x fa-times-circle" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
 </footer>
 <!-- end footer.html-->
 
