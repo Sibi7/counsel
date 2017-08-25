@@ -1,0 +1,29 @@
+.shares-company{
+  display: block;
+  position: relative;
+  float: left;
+  width: 100%;
+  h1{
+    color: #1f314b;
+    font-family: $proximaSemmiBold;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 54px;
+  }
+  &__wrapper{
+    display: flex;
+    justify-content: space-around;
+    &__item{
+      width: 334px;
+      text-align: center;
+      p{
+        color: #124794;
+        font-family: $proximaSemmiBold;
+        font-size: 21px;
+        font-weight: 600;
+        margin-top: 50px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
