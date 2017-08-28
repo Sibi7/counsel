@@ -20,17 +20,129 @@
     padding-left: 15px;
     padding-right: 15px;
   }
+  .header__menu {
+    float: left;
+    width: 100%;
+    left: 0;
+    margin-top: 0;
+    display: none;
+    margin-left: 0;
+    z-index: 4;
+    top: 0;
+    margin-bottom: 24px;
+    position: fixed;
+    height: 100vh;
+    background: rgba(254, 204, 83, .9);
+  }
+  .header__menu ul{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    margin: 0;
+    padding: 0;
+  }
+  .header__menu ul li {
+    display: block;
+    margin-right: 0;
+    text-align: center;
+    width: 100%;
+    line-height: 40px;
+
+  }
+  .header__contacts {
+    display: block;
+    position: relative;
+    float: left;
+    margin-left: 20px;
+    margin-top: 24px;
+    width: calc(100% - 194px);
+  }
+  .header__address {
+    float: left;
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+    margin: 15px 0;
+  }
+  .header__modal{
+    float: none;
+    margin: 0 auto;
+    margin-bottom: 15px;
+  }
+  .header-slider__content h1 {
+    width: 100%;
+    text-align: center;
+    color: #041328;
+    font-size: 46px;
+    display: block;
+    float: left;
+    margin-right: 0;
+    margin-top: 131px;
+    margin-bottom: 250px;
+    text-transform: uppercase;
+  }
+  .owl-nav {
+    width: 100%;
+  }
+  .services-company h1 {
+   text-align: center;
+  }
+  .services-company__wrapper {
+    height: 260px;
+    width: 44%;
+    margin: 3%;
+  }
+  .about__about-company-block {
+    margin-left: 0;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .about__about-company-reviews {
+    display: block;
+    margin-top: 30px;
+    position: relative;
+    float: left;
+    width: -webkit-calc(100% - 717px);
+    width: 100%;
+    margin-left: 0;
+    border-radius: 5px;
+    text-align: center;
+  }
 }
 
 @media only screen and (max-width: 736px) {
   .header__menu {
     float: left;
-    width: -webkit-calc(100% - 219px);
-    width: calc(100% - 219px);
-    margin-top: 21px;
+    width: 100%;
+    left: 0;
+    margin-top: 0;
     display: none;
-    margin-left: 68px;
+    margin-left: 0;
+    z-index: 4;
+    top: 0;
     margin-bottom: 24px;
+    position: fixed;
+    height: 100vh;
+    background: rgba(254, 204, 83, .9);
+  }
+  .header__menu ul{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    margin: 0;
+    padding: 0;
+  }
+  .header__menu ul li {
+    display: block;
+    margin-right: 0;
+    text-align: center;
+    width: 100%;
+    line-height: 40px;
+
   }
   .header__logo {
     margin: 15px auto;
@@ -39,12 +151,13 @@
   .header__modal {
     float: none;
     margin: 0 auto 15px auto;
-    width: 151px;
+    width: 100%;
   }
   .header__contacts {
     margin-left: 0;
     text-align: center;
     margin-top: 0;
+    width: 100%;
   }
   .header__address {
     float: none;

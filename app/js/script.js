@@ -11,7 +11,7 @@ $(document).ready(function () {
             },
             600:{
                 items:1,
-                nav:false
+                nav:true
             },
             1000:{
                 items:1,
@@ -44,6 +44,19 @@ $(document).ready(function () {
     $( ".header__menu__list" ).click(function() {
         $( "#dropdown" ).slideToggle( "slow", function() {
             // Animation complete.
+        });
+    });
+    //js
+    $(document).ready(function () {
+        var link =$('.menu-link');
+        var link_active = $('.menu-link_active');
+
+        link.click(function () {
+            link.toggleClass('menu-link_active');
+        })
+    });
+    $( ".menu-link" ).click(function() {
+        $( ".header__menu" ).slideToggle( "slow", function() {
         });
     });
 });
