@@ -72,7 +72,7 @@
       opacity: 1;
     }
   }
-  button{
+  button {
     display: block;
     margin-bottom: 20px;
     position: relative;
@@ -91,7 +91,31 @@
   }
 
 }
-.clearfix{
+
+.clearfix {
   overflow: hidden;
   clear: both;
+}
+
+button {
+  transition: 200ms ease;
+  &:hover {
+    transition: 200ms ease;
+    transform: scale(1.05);
+  }
+}
+
+.header__logo{
+  transition: 200ms ease;
+  &:hover{
+    transform: scale(1.05);
+    transition: 200ms ease;
+  }
+}
+.owl-prev, .owl-next{
+  transition: 200ms ease;
+  &:hover{
+    transform: scale(1.05);
+    transition: 200ms ease;
+  }
 }
