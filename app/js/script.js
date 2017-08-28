@@ -39,4 +39,11 @@ $(document).ready(function () {
     };
     $('#Go_Top').scrollToTop();
     /*close go to top scroll*/
+
+
+    $( ".header__menu__list" ).click(function() {
+        $( "#dropdown" ).slideToggle( "slow", function() {
+            // Animation complete.
+        });
+    });
 });

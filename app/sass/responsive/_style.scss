@@ -1,7 +1,7 @@
 @media only screen and (max-width: 1200px) {
-	.header__menu{
-      display: block;
-    }
+  .header__menu {
+    display: block;
+  }
 }
 
 @media only screen and (max-width: 980px) {
@@ -16,9 +16,9 @@
 }
 
 @media only screen and (max-width: 770px) {
-  .container{
+  .container {
     padding-left: 15px;
-    padding-right:15px;
+    padding-right: 15px;
   }
 }
 
@@ -32,30 +32,202 @@
     margin-left: 68px;
     margin-bottom: 24px;
   }
-
   .header__logo {
     margin: 15px auto;
     width: 100%;
   }
   .header__modal {
-    display: block;
-    position: relative;
-    float: right;
-    margin-top: 13px;
+    float: none;
+    margin: 0 auto 15px auto;
     width: 151px;
-    margin-bottom: 15px;
   }
   .header__contacts {
     margin-left: 0;
     text-align: center;
     margin-top: 0;
   }
+  .header__address {
+    float: none;
+    width: 163px;
+    font-size: 14px;
+    margin: 15px auto;
+    text-align: center;
+  }
+  .header-slider {;
+    display: none;
+  }
+  .services-company h1 {
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .services-company__wrapper {
+    width: 100%;
+  }
+  .header-slider__content__form {
+    width: 100%;
+    position: relative;
+    float: left;
+    height: auto;
+    top: 0;
+    z-index: 1;
+    text-align: center;
+  }
+  .owl-nav {
+    display: none;
+  }
+  .header-slider__content__form {
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+  .header-slider__content__form:before {
+    display: none;
+  }
+  .header-slider__content__form h2 {
+    width: 100%;
+  }
+  .header-slider__content__form__field-wrapper {
+    transform: none;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 10px 0;
+  }
+  .header-slider__content__form__submit-wrapper {
+    transform: none;
+    width: 100%;
+    margin: 10px 0;
+    box-sizing: border-box;
+  }
+  .header-slider__content__form__submit-wrapper input[type=submit] {
+    transform: none;
+    width: 100%;
+    left: 0;
+  }
+  .visible {
+    background: #314d63;
+    left: 0;
+    width: 100%;
+    margin-left: 0;
+    h2 {
+      width: 100%;
+      font-size: 18px;
+      margin-top: 72px;
+    }
+    .content button {
+      margin-bottom: 70px;
+    }
+  }
+  .about__about-company-block {
+    margin-left: 0;
+    padding: 0 20px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .about__about-company-reviews {
+    width: 100%;
+    margin-left: 0;
+  }
+  .about__about-company-reviews__wrapper__text {
+    width: 100%;
+  }
+  .about__about-company-reviews__wrapper__text p {
+    width: 100%;
+    padding-left: 0;
+    margin-top: 0;
+  }
+  .about__about-company-reviews__wrapper__user {
+    display: block;
+    position: relative;
+    top: inherit;
+    left: inherit;
+    float: none;
+    margin: 15px auto;
+    width: 92px;
+  }
+  .content {
+    padding: 0;
+  }
+  .content__items__item {
+    width: 100%;
+    float: left;
+    margin: 0;
+    position: relative;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+  .content__items__item:first-child {
+    margin-left: 0;
+  }
+  .shares-company__wrapper {
+    flex-direction: column;
+    &__item {
+      width: 100%;
+    }
+
+  }
+  .shares-company h1 {
+    color: #1f314b;
+    margin-bottom: 30px;
+    text-align: center;
+    margin-top: 0;
+  }
+  .footer__menu ul {
+    text-align: center;
+    margin-left: 0;
+    li {
+      width: 50%;
+      display: block;
+      float: left;
+      margin-right: 0;
+      a {
+        line-height: 50px;
+
+      }
+    }
+  }
+  .footer__author {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+  .footer__contacts {
+    width: 100%;
+    margin: 0;
+  }
+  .footer__contacts__items {
+    float: none;
+    font-size: 14px;
+    width: 140px;
+    text-align: center;
+   margin: 15px auto;
+  }
+  .visible {
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+  .content__items__item .item-wrap {
+    text-align: center;
+    width: 100%;
+
+    padding-left: 0;
+  }
+  .content__items__item img {
+    display: inline-block;
+    float: none;
+    height: 70px;
+  }
+  .content__items__item {
+    width: 100%;
+    float: none;
+    text-align: center;
+  }
 }
 
+
 @media only screen and (max-width: 500px) {
-	
+
 }
 
 @media only screen and (max-width: 320px) {
-	
+
 }

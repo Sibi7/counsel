@@ -58,9 +58,11 @@
       margin: 0;
       padding: 0;
       list-style: none;
+
       li{
         display: inline-block;
         margin-right: 40px;
+        line-height: 30px;
         a{
           color: #000000;
           display: inline-block;
@@ -75,9 +77,15 @@
             border-bottom:  1px solid #fecc53;
             transition: 200ms ease;
           }
+
         }
+
       }
+
+
     }
+
+
   }
   &__modal{
     display: block;
@@ -99,5 +107,16 @@
       text-transform: uppercase;
     }
   }
-
+}
+#dropdown {
+  margin: 0;
+  padding: 0 10px;
+  display: none;
+  position: absolute;
+  width: auto;
+  background: #fff;
+  li{
+    display: block;
+    width: 100%;
+  }
 }

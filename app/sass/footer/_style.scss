@@ -19,9 +19,15 @@
         margin-right: 23px;
         a {
           color: #ffffff;
-          font-size: 13px;
+          font-size: 16px;
           font-weight: 600;
           line-height: 100px;
+          transition: 200ms ease;
+          padding-bottom: 8px;
+          &:hover{
+            border-bottom:  1px solid #fecc53;
+            transition: 200ms ease;
+          }
         }
       }
     }
@@ -38,7 +44,7 @@
   &__author {
     margin-left: 37px;
     color: #8999b0;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 80px;
     font-family: $myriadReg;
     font-weight: 400;
@@ -60,11 +66,12 @@
       float: right;
       color: #fff;
       font-family: $proximaSemmiBold;
-      font-size: 10px;
-      width: 100px;
+      font-size: 14px;
+      width: 140px;
       font-weight: 600;
       margin-top: 27px;
       margin-left: 35px;
+
     }
   }
 }

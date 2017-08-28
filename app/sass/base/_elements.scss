@@ -119,3 +119,14 @@ button {
     transition: 200ms ease;
   }
 }
+input:focus{
+  border: 2px solid #fecc53;
+  transition: 200ms ease;
+  box-sizing: border-box;
+}
+.header-slider__content__form__field-wrapper input:focus{
+  transform: skew(-0deg);
+  border: 2px solid #fecc53;
+  border-radius: 5px;
+  transition: 200ms ease;
+}
