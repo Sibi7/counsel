@@ -16,6 +16,9 @@
     &__item{
       width: 334px;
       text-align: center;
+      overflow: hidden;
+
+
       p{
         color: #124794;
         font-family: $proximaSemmiBold;

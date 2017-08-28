@@ -17,6 +17,16 @@
     float: left;
     width: 30%;
     margin-right: 3.333%;
+    overflow: hidden;
+
+    img{
+      width: 100%;
+      transition: 400ms ease;
+      &:hover{
+        transform: scale(1.1);
+        transition: 400ms ease;
+      }
+    }
     &:nth-child(4){
       margin-right:0;
     }
