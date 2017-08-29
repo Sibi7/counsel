@@ -2,9 +2,85 @@
   .header__menu {
     display: block;
   }
+  .header__contacts {
+    margin-left: 15px;
+  }
+  .header__menu {
+    margin-left: 0;
+  }
+  .owl-nav {
+    width: 100%;
+  }
+  .about__about-company-reviews {
+    width: 100%;
+  }
+  .content__items__item {
+    width: 20%;
+    margin: 3%;
+  }
+  .services-company__wrapper {
+    height: 271px;
+  }
+  .about__about-company-block {
+    margin-left: -30px;
+    padding: 0 30px;
+    width: 100%;
+  }
+
 }
 
 @media only screen and (max-width: 980px) {
+  .content__items__item {
+    width: 20%;
+    margin: 3%;
+  }
+  .header__menu {
+    float: left;
+    width: 100%!important;
+    left: 0!important;
+    margin-top: 0!important;
+    display: none;
+    margin-left: 0!important;
+    z-index: 4;
+    top: 0!important;
+    margin-bottom: 24px;
+    position: fixed;
+    height: 100vh;
+    background: rgba(254, 204, 83, .9);
+  }
+  .header__modal {
+    width: 100%;
+  }
+  .header__address {
+    float: none;
+    font-size: 14px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .header__menu ul{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    margin: 0;
+    padding: 0;
+  }
+  .header__menu ul li {
+    display: block;
+    margin-right: 0;
+    text-align: center;
+    width: 100%;
+    line-height: 40px;
+
+  }
+  .header__contacts {
+    margin-left: 15px;
+    margin-bottom: 15px;
+  }
+  .owl-nav {
+    width: 100%;
+  }
   .header__menu {
     float: left;
     width: -webkit-calc(100% - 219px);
@@ -109,6 +185,53 @@
     margin-left: 0;
     border-radius: 5px;
     text-align: center;
+  }
+  .content {
+    padding: 0;
+  }
+  .content__items__item {
+    width: 20%;
+    float: left;
+    margin: 0 3%;
+    position: relative;
+  }
+  .footer__menu ul li {
+    width: 46%;
+    float: left;
+    text-align: center;
+    a{
+      line-height: 50px;
+    }
+  }
+  .footer__menu ul {
+    text-align: center;
+    margin-left: 0;
+    li {
+      width: 50%;
+      display: block;
+      float: left;
+      margin-right: 0;
+      a {
+        line-height: 50px;
+
+      }
+    }
+  }
+  .footer__author {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+  .footer__contacts {
+    width: 100%;
+    margin: 0;
+  }
+  .footer__contacts__items {
+    float: none;
+    font-size: 14px;
+    width: 140px;
+    text-align: center;
+    margin: 15px auto;
   }
 }
 

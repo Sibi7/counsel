@@ -13,16 +13,22 @@
 @media (min-width: 768px) {
     .container {
         width: 766px;
+        padding-right: 15px;
+        padding-left: 15px;
     }
 }
 @media (min-width: 992px) {
     .container {
         width: 990px;
     }
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 @media (min-width: 1200px) {
     .container {
         width: 1208px;
+        padding-right: 15px;
+        padding-left: 15px;
     }
 }
