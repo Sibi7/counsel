@@ -112,13 +112,6 @@ button {
     transition: 200ms ease;
   }
 }
-.owl-prev, .owl-next{
-  transition: 200ms ease;
-  &:hover{
-    transform: scale(1.05);
-    transition: 200ms ease;
-  }
-}
 input:focus{
   border: 2px solid #fecc53;
   transition: 200ms ease;

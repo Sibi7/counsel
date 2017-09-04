@@ -54,7 +54,10 @@
     float: left;
   }
   &__contacts {
-    display: block;
+    @include display-flex(flex);
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include justify-content(flex-end);
     position: relative;
     float: left;
     width: calc(100% - 291px);
@@ -63,15 +66,17 @@
       display: block;
       position: relative;
       text-align: right;
-      float: right;
+      float: left;
       color: #fff;
       font-family: $proximaSemmiBold;
       font-size: 14px;
       width: 140px;
       font-weight: 600;
       margin-top: 27px;
-      margin-left: 35px;
-
+      margin-left: 32px;
+      &:last-of-type{
+        width: 160px;
+      }
     }
   }
 }

@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('.owl-carousel').owlCarousel({
+    $('.top-slider').owlCarousel({
         loop:true,
         margin:0,
         responsiveClass:true,
@@ -73,6 +73,32 @@ $(document).ready(function () {
            $(this).addClass('active');
            dropdownList.slideDown(500);
        }
+    });
+    /*close*/    
+    
+    /*rev slider*/
+    $('.about__rev-slider').owlCarousel({
+        loop: false,
+        autoplay:true,
+        autoplayTimeout:5000,
+        autoplayHoverPause:true,
+        margin:0,
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:1,
+                nav:true
+            },
+            600:{
+                items:1,
+                nav:true
+            },
+            1000:{
+                items:1,
+                nav:true,
+                loop: false
+            }
+        }
     });
     /*close*/
 });
