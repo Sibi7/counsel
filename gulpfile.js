@@ -1,17 +1,19 @@
 var gulp = require('gulp'), // Подключаем Gulp
     sass = require('gulp-sass'), //Подключаем Sass пакет,
-    browserSync = require('browser-sync'), // Подключаем Browser Sync
+    browserSync = require('browser-sync').create(), // Подключаем Browser Sync
     concat = require('gulp-concat'), // Подключаем gulp-concat (для конкатенации файлов)
     uglify = require('gulp-uglifyjs'), // Подключаем gulp-uglifyjs (для сжатия JS)
     rename = require('gulp-rename'), // Подключаем библиотеку для переименования файлов
     del = require('del'), // Подключаем библиотеку для удаления файлов и папок
+    imagemin = require('gulp-imagemin'), // Подключаем библиотеку для работы с изображениями
+    pngquant = require('imagemin-pngquant'), // Подключаем библиотеку для работы с png
     spritesmith = require('gulp.spritesmith'), // Подключаем библиотеку для создания png-спрайтов
-    svgstore = require('gulp-svgstore'),//// Подключаем библиотеку для объединения SVG в один файл 
+    svgstore = require('gulp-svgstore'),//// Подключаем библиотеку для объединения SVG в один файл
     svgmin = require('gulp-svgmin'),//Подключаем библиотеку для минификации SVG
     cache = require('gulp-cache'), // Подключаем библиотеку кеширования
     extender = require('gulp-html-extend'),//Подключаем бибилиотеку для склейки html-файлов
     sourcemaps = require('gulp-sourcemaps'),//Подключаем плагин, записывающий карту источника в исходный файл
-    rimraf = require('rimraf'),//Очищает указанные исходники  
+    rimraf = require('rimraf'),//Очищает указанные исходники
     plumber = require('gulp-plumber');//Подключаем плагин, который не останавливает задачи от остановки во время их выполнения при возникновении ошибки
 
 var postcss = require('gulp-postcss'),//Блиотека-парсер стилей для работы с postcss-плагинами
@@ -38,15 +40,31 @@ gulp.task('css-libs', function () { // Создаем таск css-libs
         .pipe(postcss(processors))// сжымаем
         .pipe(concat('libs.min.css'))// объеденяем в файл
         .pipe(gulp.dest('css')) // Выгружаем результата в папку app/css
-        .pipe(browserSync.reload({
-            stream: true
-        })); // Обновляем CSS на странице при изменении
+        .pipe(browserSync.stream({})); // Обновляем CSS на странице при изменении
+});
+
+gulp.task('png-sprite', function () {// PNG Sprites
+    var spriteData =
+        gulp.src('app/img/sprites/*.*')// путь, откуда берем картинки для спрайта
+            .pipe(spritesmith({
+                imgName: 'sprite.png',//имя генерируемой картинки
+                cssName: '_png-sprite.sass',//имя css файла, который получится на выходе
+                cssFormat: 'sass',//формат css файла
+                algorithm: 'binary-tree',//способ сортировки изображений
+                cssTemplate: 'sass.template.mustache',//функция или путь до mustache шаблона, дающие возможность настроить CSS-файл на выходе
+                cssVarMap: function (sprite) {//цикл, настраивающий названия CSS переменных
+                    sprite.name = 's-' + sprite.name
+                }
+            }));
+
+    spriteData.img.pipe(gulp.dest('img/sprites/'));// путь, куда сохраняем картинку
+    spriteData.css.pipe(gulp.dest('app/sass/libs/'));// путь, куда сохраняем стили
 });
 
 gulp.task('sass', function () { // Создаем таск Sass
     var processors = [// подключаем постпроцессоры в массиве
         assets,
-        short, 
+        short,
         fontmagic,
         fixes,
         autoprefixer(['last 5 versions', '> 5%', 'ie 8', 'ie 7', 'ie 9', 'safari 5', 'opera 12.1', 'ios 6', 'android 4'], {
@@ -58,23 +76,28 @@ gulp.task('sass', function () { // Создаем таск Sass
     ];
     return gulp.src('app/sass/**/*.scss')
         .pipe(plumber())
+        .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss(processors))
         .pipe(rename({
             suffix: ".min",
             extname: ".css"
         }))
+        .pipe(sourcemaps.write('.', {sourceRoot: 'css-source'}))
         .pipe(plumber.stop())
         .pipe(gulp.dest('css'))
-        .pipe(browserSync.reload({
-            stream: true
-        }));
+        .pipe(browserSync.stream({}));
 });
 
-gulp.task('browser-sync', function() { // Создаем таск browser-sync
-    browserSync({ // Выполняем browserSync
-        server: { // Определяем параметры сервера
-            baseDir: '' // Директория для сервера - app
+gulp.task('browser-sync', function () { // Создаем таск browser-sync
+    browserSync.init({ // Выполняем browserSync
+        server: {
+            target: './' // Директория для сервера - app
+        },
+        ghostMode: {
+            clicks: true,
+            forms: true,
+            scroll: true
         },
         notify: false // Отключаем уведомления
     });
@@ -90,7 +113,8 @@ gulp.task('compress', ['clean'], function () {// Создаем таск compres
         }))
         .pipe(uglify()) // Сжимаем JS файл
         .pipe(plumber.stop())
-        .pipe(gulp.dest('js'));// Выгружаем в папку js
+        .pipe(gulp.dest('js'))// Выгружаем в папку js
+        .pipe(browserSync.stream({}));
 
 });
 
@@ -102,28 +126,46 @@ gulp.task('extend-pages', function () {
     gulp.src('./app/html/pages/*.html')
         .pipe(extender({annotations: true, verbose: false})) // default options
         .pipe(gulp.dest('./'))
+        .pipe(browserSync.stream({}));
 });
 
 gulp.task('extend-blocks', function () {
     gulp.src('./app/html/*.html')
         .pipe(extender({annotations: true, verbose: false})) // default options
         .pipe(gulp.dest('./'))
+        .pipe(browserSync.stream({}));
 });
 
-gulp.task('watch', ['browser-sync', 'compress', 'extend-pages', 'css-libs', 'sass'], function () {
+gulp.task('watch', ['compress', 'extend-pages', 'css-libs', 'img', 'sass'], function () {
     gulp.watch('app/libs/**/*', ['css-libs']); // Наблюдение за папкой libs
+    gulp.watch('app/img/**/*', ['img']);// Наблюдение за папкой img
     gulp.watch('app/sass/**/*.scss', ['sass']); // Наблюдение за sass файлами в папке sass
     gulp.watch(['app/html/**/*.html'], ['extend-pages']);// Наблюдение за HTML-файлами в папке html
     gulp.watch('app/js/**/*.js', ['compress']); // Наблюдение за js-файлами
 });
 
 
+gulp.task('img', function () {
+    return gulp.src('app/img/**/*')
+        .pipe(cache(imagemin({
+            interlaced: true,
+            progressive: true,
+            svgoPlugins: [{
+                removeViewBox: false
+            }],
+            use: [pngquant()]
+        })))
+        .pipe(gulp.dest('img'))
+        .pipe(browserSync.reload({
+            stream: true
+        }));
+});
 
 gulp.task('clear', function (callback) {
     return cache.clearAll();
 });
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['watch', 'browser-sync']);
 
 /*
- npm i gulp gulp-sass browser-sync gulp-concat gulp-uglifyjs gulp-rename del gulp.spritesmith gulp-svgstore gulp-svgmin gulp-cache gulp-html-extend gulp-sourcemaps rimraf gulp-plumber gulp-postcss autoprefixer cssnano postcss-pxtorem postcss-px-to-em postcss-short stylefmt postcss-assets postcss-short-spacing postcss-focus postcss-sorting postcss-font-magician postcss-fixes stylelint-config-standard --save-dev*/
+ npm i gulp gulp-sass browser-sync gulp-concat gulp-uglifyjs gulp-rename del gulp-imagemin imagemin-pngquant calipers-png calipers-jpeg calipers-gif gulp.spritesmith gulp-svgstore gulp-svgmin gulp-cache gulp-html-extend gulp-sourcemaps rimraf gulp-plumber gulp-postcss autoprefixer cssnano postcss-pxtorem postcss-px-to-em postcss-short stylefmt postcss-assets postcss-short-spacing postcss-focus postcss-sorting postcss-font-magician postcss-fixes stylelint-config-standard --save-dev*/
