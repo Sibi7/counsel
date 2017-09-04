@@ -43,24 +43,6 @@ gulp.task('css-libs', function () { // Создаем таск css-libs
         .pipe(browserSync.stream({})); // Обновляем CSS на странице при изменении
 });
 
-gulp.task('png-sprite', function () {// PNG Sprites
-    var spriteData =
-        gulp.src('app/img/sprites/*.*')// путь, откуда берем картинки для спрайта
-            .pipe(spritesmith({
-                imgName: 'sprite.png',//имя генерируемой картинки
-                cssName: '_png-sprite.sass',//имя css файла, который получится на выходе
-                cssFormat: 'sass',//формат css файла
-                algorithm: 'binary-tree',//способ сортировки изображений
-                cssTemplate: 'sass.template.mustache',//функция или путь до mustache шаблона, дающие возможность настроить CSS-файл на выходе
-                cssVarMap: function (sprite) {//цикл, настраивающий названия CSS переменных
-                    sprite.name = 's-' + sprite.name
-                }
-            }));
-
-    spriteData.img.pipe(gulp.dest('img/sprites/'));// путь, куда сохраняем картинку
-    spriteData.css.pipe(gulp.dest('app/sass/libs/'));// путь, куда сохраняем стили
-});
-
 gulp.task('sass', function () { // Создаем таск Sass
     var processors = [// подключаем постпроцессоры в массиве
         assets,

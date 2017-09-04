@@ -130,3 +130,7 @@ input:focus{
   border-radius: 5px;
   transition: 200ms ease;
 }
+.flex-wrapper{
+  @include display-flex(flex);
+  @include flex-wrap(wrap);
+}

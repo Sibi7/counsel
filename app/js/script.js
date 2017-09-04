@@ -59,4 +59,20 @@ $(document).ready(function () {
         $( ".header__menu" ).slideToggle( "slow", function() {
         });
     });
+    
+    /*services dropdown*/
+    $(document).on('click', '.promotion__right-menu > li > a', function () {
+       event.preventDefault();
+       dropdownList = $(this).next('.dropdown');       
+       if($(this).hasClass('active')){
+           $(this).removeClass('active');
+           dropdownList.slideUp(500);
+       } else{
+           $('.promotion__right-menu > li > a').removeClass('active');
+           $('.promotion__right-menu > li > .dropdown').slideUp(500);
+           $(this).addClass('active');
+           dropdownList.slideDown(500);
+       }
+    });
+    /*close*/
 });
