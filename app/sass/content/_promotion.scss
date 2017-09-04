@@ -34,5 +34,86 @@
     font-size: 19px;
     margin-top: 29px;
     margin-bottom: 33px;
+    @include breakpoint(max-width 660px){
+      line-height: 20px;
+    }
+  }
+  &__box{
+    display: block;
+    position: relative;
+    float: left;
+    width: 100%;
+    margin-bottom: calc(58px - 29px);
+    &--img{
+      display: block;
+      position: relative;
+      float: left;
+      width: 362px;
+      height: 363px;
+      overflow: hidden;
+      @include breakpoint(max-width 600px){
+        width: 280px;
+        height: 282px;
+        margin-left: calc(50% - (280px/2));
+      }
+      img{
+        size: 100%;
+        object-fit: cover;
+      }
+    }
+    &--descr{
+      display: block;
+      position: relative;
+      float: left;
+      width: calc(100% - 362px);
+      margin-top: 4px;
+      padding-left: 54px;
+      @include box-sizing(border-box);
+      @include breakpoint(max-width 600px){
+        width: 100%;
+        padding-left: 0;
+      }
+      > p{
+        display: block;
+        position: relative;
+        float: left;
+        width: 100%;
+        color: #000000;
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 22px;
+        margin-top: 0;
+        margin-bottom: 29px;
+      }
+    }
+  }
+  &__links{
+    @include display-flex(flex);
+    @include flex-wrap(wrap);
+    @include flex-direction(row);
+    @include justify-content(flex-start);
+    position: relative;
+    float: left;
+    width: 100%;
+    margin-bottom: 79px;
+    > a{
+      flex: 1 0 0;
+      padding-right: 45px;
+      @include box-sizing(border-box);
+      position: relative;
+      color: #000306;
+      font-family: $proximaBold;
+      font-size: 15px;
+      line-height: 18px;
+      text-transform: uppercase;
+      @include breakpoint(max-width 600px){
+        flex: 1 0 100%;
+        margin-bottom: 10px;
+      }
+      &:hover{
+        text-decoration: underline;
+        text-decoration-color: #9f9f9f;
+      }
+    }
   }
 }
