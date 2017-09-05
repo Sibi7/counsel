@@ -19,7 +19,9 @@
     margin-right: 3.333%;
     overflow: hidden;
     margin-bottom: 30px;
-
+    @include breakpoint(max-width 660px){
+      height: auto;
+    }
     img{
       width: 100%;
       transition: 400ms ease;

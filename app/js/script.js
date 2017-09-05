@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    
+    /*header slider*/
     $('.top-slider').owlCarousel({
         loop:true,
         margin:0,
@@ -20,6 +22,8 @@ $(document).ready(function () {
             }
         }
     });
+    /*close*/
+    
     /*go to top scroll*/
     $.fn.scrollToTop = function () {
         $(this).hide().removeAttr("href");
@@ -95,8 +99,7 @@ $(document).ready(function () {
             },
             1000:{
                 items:1,
-                nav:true,
-                loop: false
+                nav:true
             }
         }
     });

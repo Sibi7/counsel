@@ -17,15 +17,46 @@
       width: 334px;
       text-align: center;
       overflow: hidden;
-
-
       p{
+        display: block;
+        position: relative;
+        float: left;
+        width: 100%;
         color: #124794;
         font-family: $proximaSemmiBold;
         font-size: 18px;
         font-weight: 600;
         margin-top: 50px;
         text-transform: uppercase;
+      }
+    }
+    &--banner{
+      display: block;
+      position: absolute;
+      content: '';
+      width: 125px;
+      height: 125px;
+      overflow: hidden;
+      background-image: url('../img/icons/stok-banner.png');
+      background-repeat: no-repeat;
+      -webkit-background-size: contain;
+      background-size: contain;
+      //top: 79px;
+      margin-top: -10px;
+      margin-left: 67px;
+      z-index: 2;
+    }
+    &--img{
+      display: block;
+      position: relative;
+      float: left;
+      width: 180px;
+      height: 180px;
+      margin-left: calc(50% - (180px/2));
+      /*overflow: hidden;*/
+      img{
+        size: 100%;
+        object-fit: cover;
       }
     }
   }
