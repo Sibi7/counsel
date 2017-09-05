@@ -185,6 +185,9 @@
        position: relative;
        float: left;
        width: calc(100% - 100px);
+       @include breakpoint(max-width 736px){
+         width: 100%;
+       }
        p{
          display: block;
          display: -webkit-box;
@@ -203,6 +206,14 @@
          overflow: hidden;
          -o-text-overflow: ellipsis;
          text-overflow: ellipsis;
+         @include breakpoint(max-width 736px){
+           width: 100%;
+           padding-left: 0;
+           margin-top: 0;
+         }
+         @include breakpoint(max-width 660px){
+           padding: 0 10px;
+         }
        }
      }
 
