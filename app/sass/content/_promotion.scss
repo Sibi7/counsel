@@ -27,6 +27,9 @@
     margin-bottom: 37px;
     margin-top: 34px;
     text-transform: uppercase;
+    @include breakpoint(max-width 660px){
+      line-height: 20px;
+    }
   }
   h1.promotion__single-title {
     color: #124794;
@@ -44,6 +47,9 @@
     float: left;
     width: 100%;
     margin-bottom: calc(58px - 29px);
+    @include breakpoint(max-width 660px){
+      margin-bottom: 15px;
+    }
     &--img {
       display: block;
       position: relative;
@@ -96,6 +102,9 @@
     float: left;
     width: 100%;
     margin-bottom: 79px;
+    @include breakpoint(max-width 660px){
+      margin-bottom: 15px;
+    }
     > a {
       flex: 1 0 0;
       padding-right: 45px;

@@ -41,6 +41,10 @@
         font-weight: 600;
         margin-top: 50px;
         text-transform: uppercase;
+        @include breakpoint(max-width 660px){
+          margin-top: 15px;
+          margin-bottom: 15px;
+        }
       }
     }
     &--banner{
