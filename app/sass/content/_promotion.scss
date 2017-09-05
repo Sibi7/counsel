@@ -404,5 +404,44 @@
         }
       }
     }
+    > .about__about-company-reviews__wrapper{
+      width: calc(50% - (22px*2));
+      margin-top: 40px;
+      margin-bottom: 30px;
+      margin-left: 22px;
+      margin-right: 22px;
+      @include breakpoint(max-width 660px){
+        width: calc(100% - (22px*2));
+      }
+      p{
+        width: 100%;
+        height: auto;
+        -webkit-line-clamp: inherit;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        @include breakpoint(max-width 660px){
+          padding: 10px;
+          @include box-sizing(border-box);
+        }
+      }
+    }
+    &--more{
+      display: block;
+      position: relative;
+      float: left;
+      width: 200px;
+      margin-left: calc(50% - (200px/2));
+      margin-top: 29px;
+      margin-bottom: 30px;
+      color: #1f314b;
+      font-family: $proximaBold;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: underline;
+      text-transform: uppercase;
+      text-decoration-color: #9f9f9f;
+    }
   }
 }

@@ -24,7 +24,7 @@
       float: left;
       width: 334px;
       text-align: center;
-      overflow: hidden;
+      //overflow: hidden;
       @include breakpoint(max-width 992px){
         width: 100%;
       }
