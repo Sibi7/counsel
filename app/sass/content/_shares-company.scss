@@ -13,10 +13,21 @@
   &__wrapper{
     display: flex;
     justify-content: space-around;
+    > a{
+      display: inline-block;
+      position: relative;
+      float: left;
+    }
     &__item{
+      display: block;
+      position: relative;
+      float: left;
       width: 334px;
       text-align: center;
       overflow: hidden;
+      @include breakpoint(max-width 992px){
+        width: 100%;
+      }
       p{
         display: block;
         position: relative;

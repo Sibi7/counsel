@@ -381,5 +381,28 @@
       text-transform: uppercase;
       text-decoration-color: #9f9f9f;
     }
+    &--item{
+      display: block;
+      position: relative;
+      float: left;
+      width: 23%;
+      height: 128px;
+      overflow: hidden;
+      margin-bottom: 34px;
+      @include breakpoint(max-width 660px){
+        width: 290px;
+        margin-left: calc(50% - (290px/2));
+      }
+      img {
+        size: 100%;
+        object-fit: cover;
+        transition: .4s ease;
+      }
+      &:hover{
+        img{
+          transform: scale(1.1);
+        }
+      }
+    }
   }
 }
