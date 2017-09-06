@@ -1,9 +1,9 @@
-.shares-company{
+.shares-company {
   display: block;
   position: relative;
   float: left;
   width: 100%;
-  h1{
+  h1 {
     color: #1f314b;
     font-family: $proximaSemmiBold;
     font-size: 28px;
@@ -11,26 +11,34 @@
     margin-bottom: 33px;
     text-transform: uppercase;
   }
-  &__wrapper{
+  &__wrapper {
     display: flex;
     justify-content: space-around;
-    > a{
+    > a {
       display: inline-block;
       position: relative;
       float: left;
       margin-bottom: 33px;
+      &:hover {
+        .shares-company__wrapper--img{
+          img{
+            transform: scale(1.1);
+            transition: 400ms ease;
+          }
+        }
+      }
     }
-    &__item{
+    &__item {
       display: block;
       position: relative;
       float: left;
       width: 334px;
       text-align: center;
       //overflow: hidden;
-      @include breakpoint(max-width 992px){
+      @include breakpoint(max-width 992px) {
         width: 100%;
       }
-      p{
+      p {
         display: block;
         position: relative;
         float: left;
@@ -41,13 +49,13 @@
         font-weight: 600;
         margin-top: 50px;
         text-transform: uppercase;
-        @include breakpoint(max-width 660px){
+        @include breakpoint(max-width 660px) {
           margin-top: 15px;
           margin-bottom: 15px;
         }
       }
     }
-    &--banner{
+    &--banner {
       display: block;
       position: absolute;
       content: '';
@@ -62,23 +70,23 @@
       margin-top: -10px;
       margin-left: 67px;
       z-index: 2;
-      @include breakpoint(max-width 660px){
+      @include breakpoint(max-width 660px) {
         margin-left: 45px;
       }
     }
-    &--img{
+    &--img {
       display: block;
       position: relative;
       float: left;
       width: 180px;
       height: 180px;
-      margin-left: calc(50% - (180px/2));
-      /*overflow: hidden;*/
-      img{
+      margin-left: calc(50% - (180px / 2));
+      overflow: hidden;
+      img {
         size: 100%;
         object-fit: cover;
+        transition: 400ms ease;
       }
     }
-
   }
 }
