@@ -305,6 +305,26 @@
         line-height: 14px;
       }
     }
+    &--img{
+      display: block;
+      position: relative;
+      float: left;
+      width: 274px;
+      height: 128px;
+      overflow: hidden;
+      img{
+        size: 100%;
+        object-fit: cover;
+        transition: .4s ease;
+      }
+    }
+    &--element:hover{
+      .promotion__menu-links--img{
+        img{
+          transform: scale(1.1);
+        }
+      }
+    }
     &--photo{
       display: block;
       position: relative;
