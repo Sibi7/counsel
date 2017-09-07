@@ -102,9 +102,9 @@ $(document).ready(function() {
     /*rev slider*/
     $('.about__rev-slider').owlCarousel({
         loop: false,
-        autoplay: true,
+        autoplay: false,
         autoplayTimeout: 5000,
-        autoplayHoverPause: true,
+        autoplayHoverPause: false,
         margin: 0,
         responsiveClass: true,
         responsive: {

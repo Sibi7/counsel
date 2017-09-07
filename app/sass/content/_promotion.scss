@@ -278,9 +278,9 @@
       display: block;
       position: relative;
       float: left;
-      width: 274px;
-      height: 220px;
-      margin-bottom: 15px;
+      width: 240px;
+      height: 100%;
+      margin-bottom: 25px;
       > h3 {
         display: block;
         position: relative;
@@ -294,15 +294,22 @@
       }
       > p {
         display: block;
+        display: -webkit-box;
         position: relative;
         float: left;
         width: 100%;
+        height: calc(11px * 1.3 * 4);
         color: #5c6672;
         margin-top: 0;
         margin-bottom: 10px;
         font-size: 11px;
         font-weight: 400;
-        line-height: 14px;
+        line-height: 1.3;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
       }
     }
     &--img{
@@ -560,6 +567,80 @@
       height: 100%;
       margin: 0;
       padding: 0;
+    }
+  }
+  &__policy-title{
+    width: 100%;
+    text-align: center;
+  }
+  &__policy-subtitle{
+    display: block;
+    position: relative;
+    float: left;
+    width: 100%;
+    color: #1f314b;
+    font-size: 20px;
+  }
+  &__policy-list{
+    display: block;
+    position: relative;
+    float: left;
+    width: 100%;
+    counter-reset: li; /* Инициализируем счетчик */
+    list-style: none;
+    padding-left: 26px;
+    @include box-sizing(border-box);
+    > li{
+      display: block;
+      position: relative;
+      float: left;
+      width: 100%;
+      > ul{
+        display: block;
+        position: relative;
+        float: left;
+        width: 100%;
+        list-style: none;
+        padding: 0;
+        > li:before{
+          display: block;
+          position: absolute;
+          content: '';
+          width: 4px;
+          height: 4px;
+          background-color: #000;
+          left: -9px;
+          top: 10px;
+        }
+      }
+    }
+    > li:before {
+      content: counter(li); /* В качестве данных используем счетчик */
+      counter-increment: li; /* Увеличиваем значение счетчика на 1 */
+      position: absolute;
+      top: 18px;
+      left: -29px;
+      width: 2em;
+      padding: 4px 0;
+      color: #1f314b;
+      font-size: 18px;
+      text-align: center;
+    }
+  }
+  &__policy-text{
+    display: block;
+    position: relative;
+    float: left;
+    width: 100%;
+    color: #1f314b;
+    font-size: 16px;
+    line-height: 1.5;
+    > a{
+      color: #124794;
+      &:hover{
+        text-decoration: underline;
+        text-decoration-color: #9f9f9f;
+      }
     }
   }
 }

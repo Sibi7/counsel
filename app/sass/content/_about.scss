@@ -153,6 +153,29 @@
       line-height: 19px;
       text-decoration: underline;
     }
+    &--avatar{
+      display: block;
+      position: relative;
+      float: left;
+      width: 92px;
+      height: 92px;
+      overflow: hidden;
+      border-radius: 50%;
+      background-color: #527498;
+      vertical-align: middle;
+      img{
+        size: 100%;
+        object-fit: cover;
+      }
+      span{
+        display: block;
+        position: relative;
+        font-size: 30px;
+        text-align: center;
+        color: #fff;
+        margin-top: 23px;
+      }
+    }
    &__wrapper{
      border: 1px solid #e8e9ed;
      box-sizing: border-box;
@@ -178,6 +201,7 @@
          font-weight: 700;
          line-height: 17px;
          text-align: center;
+         float: left;
        }
      }
      &__text{
