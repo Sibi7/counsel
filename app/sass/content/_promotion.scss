@@ -560,6 +560,31 @@
       line-height: 1.5;
     }
   }
+  &__download{
+    @include display-flex(flex);
+    @include flex-wrap(wrap);
+    @include flex-direction(row);
+    @include justify-content(space-between);
+    position: relative;
+    float: left;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    .promotion__wrapper--element{
+      display: block;
+      position: relative;
+      float: left;
+      width: 162px;
+      height: 100px;
+      padding: 1em;
+      @include box-sizing(border-box);
+      background-color: #efefef;
+      border: 1px solid white;
+      color: #1a2636;
+      border-radius: 3px;
+      margin: 2px;
+    }
+  }
   &__map{
     display: block;
     position: relative;
