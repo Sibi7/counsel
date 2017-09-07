@@ -175,7 +175,7 @@
     margin: 0 3%;
     position: relative;
   }
-  .footer__menu ul li {
+  /*.footer__menu ul li {
     width: 46%;
     float: left;
     text-align: center;
@@ -196,7 +196,7 @@
 
       }
     }
-  }
+  }*/
   .footer__author {
     width: 100%;
     margin: 0;
@@ -380,20 +380,20 @@
     text-align: center;
     margin-top: 0;
   }
-  .footer__menu ul {
-    text-align: center;
-    margin-left: 0;
+  /*.footer__menu ul {
+    !*text-align: center;
+    margin-left: 0;*!
     li {
-      width: 50%;
+      !*width: 50%;
       display: block;
       float: left;
-      margin-right: 0;
+      margin-right: 0;*!
       a {
-        line-height: 50px;
+        !*line-height: 50px;*!
 
       }
     }
-  }
+  }*/
   .footer__author {
     width: 100%;
     margin: 0;
