@@ -550,6 +550,15 @@
         line-height: 20px;
       }
     }
+    &--contact-notification{
+      display: block;
+      position: relative;
+      float: left;
+      width: 100%;
+      color: #1f314b;
+      font-size: 16px;
+      line-height: 1.5;
+    }
   }
   &__map{
     display: block;
