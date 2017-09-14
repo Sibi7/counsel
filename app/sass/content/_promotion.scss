@@ -560,6 +560,70 @@
       line-height: 1.5;
     }
   }
+  &__portfolio-slider{
+    display: block;
+    position: relative;
+    float: left;
+    width: 100%;
+    &--slide{
+      @include display-flex(flex);
+      @include flex-wrap(wrap);
+      @include flex-direction(row);
+      @include justify-content(space-between);
+      position: relative;
+      float: left;
+      width: 100%;
+      > p{
+        display: block;
+        position: relative;
+        float: left;
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 24px;
+        color: #282828;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+      }
+    }
+    .owl-nav{
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 32px;
+      top: 51px;
+      left: 0;
+      @include breakpoint(max-width 660px){
+        display: none;
+      }
+      .owl-prev{
+        display: block;
+        position: relative;
+        float: left;
+        width: 32px;
+        height: 32px;
+        left: -44px;
+        color: transparent;
+        background-image: url('../img/icons/portfolio-prev-icon.png');
+        background-repeat: no-repeat;
+        -webkit-background-size: contain;
+        background-size: contain;
+      }
+      .owl-next{
+        display: block;
+        position: relative;
+        float: right;
+        width: 32px;
+        height: 32px;
+        right: -44px;
+        color: transparent;
+        background-image: url('../img/icons/portfolio-next-icon.png');
+        background-repeat: no-repeat;
+        -webkit-background-size: contain;
+        background-size: contain;
+      }
+    }
+  }
   &__download{
     @include display-flex(flex);
     @include flex-wrap(wrap);

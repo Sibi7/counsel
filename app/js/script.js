@@ -43,6 +43,30 @@ $(document).ready(function() {
     });
     /*close*/
 
+    /*portfolio slider*/
+    $('.promotion__portfolio-slider').owlCarousel({
+        loop: true,
+        nav:true,
+        margin:10,
+        responsiveClass: true,
+        responsive:{
+            0:{
+                items:1,
+                nav:false
+            },
+            600:{
+                items:1,
+                nav:false
+            },
+            1000:{
+                items:1,
+                nav:true,
+                loop:true
+            }
+        }
+    });
+    /*close*/
+
     /*go to top scroll*/
     $.fn.scrollToTop = function () {
         $(this).hide().removeAttr("href");
