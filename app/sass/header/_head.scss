@@ -58,14 +58,62 @@
     margin-top: 21px;
     margin-left: 68px;
     margin-bottom: 24px;
-    ul{
+    > ul{
       margin: 0;
       padding: 0;
       list-style: none;
+      @include breakpoint(max-width 980px){
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 200px;
+        margin: 0;
+        padding: 0;
+      }
+      @include breakpoint(max-width 770px){
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 200px;
+        margin: 0;
+        padding: 0;
+      }
+      @include breakpoint(max-width 736px){
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 200px;
+        margin: 0;
+        padding: 0;
+      }
       li{
         display: inline-block;
         margin-right: 40px;
         line-height: 30px;
+        @include breakpoint(max-width 980px){
+          display: block;
+          margin-right: 0;
+          text-align: center;
+          width: 100%;
+          line-height: 40px;
+        }
+        @include breakpoint(max-width 770px){
+          display: block;
+          margin-right: 0;
+          text-align: center;
+          width: 100%;
+          line-height: 40px;
+        }
+        @include breakpoint(max-width 736px){
+          display: block;
+          margin-right: 0;
+          text-align: center;
+          width: 100%;
+          line-height: 40px;
+        }
         a{
           color: #000000;
           display: inline-block;
@@ -84,8 +132,11 @@
         }
       }
       li:hover{
-        #dropdown{
+        .dropdown-menu{
           display: block;
+          @include breakpoint(max-width 660px){
+            display: none;
+          }
         }
       }
     }
@@ -158,13 +209,20 @@
     }
   }
 }
-#dropdown {
+.dropdown-menu {
   margin: 0;
   padding: 0 10px;
+  @include box-sizing(border-box);
+  margin-left: -13px;
   display: none;
   position: absolute;
-  width: auto;
+  width: 380px;
   background: #fff;
+  @include breakpoint(max-width 660px){
+    width: 290px;
+    margin-left: 0;
+    left: calc(50% - (290px/2));
+  }
   li{
     display: block;
     width: 100%;

@@ -88,16 +88,26 @@ $(document).ready(function() {
     /*close go to top scroll*/
 
 
-    $(".header__menu__list").click(function () {
-        $("#dropdown").slideToggle("slow", function () {
-            // Animation complete.
-        });
+    /*show heder submenu*/
+    $(document).on('click', '.header__menu__list > a', function () {
+        event.preventDefault();
+        var list = $(this).next('.dropdown-menu');
+        console.log( list );
+        if($(this).hasClass('show-submenu')){
+            $(this).removeClass('show-submenu');
+            list.slideUp('fast');
+        } else{
+            $('.header__menu__list > a').removeClass('show-submenu');
+            $('.dropdown-menu').slideUp('fast');
+            $(this).addClass('show-submenu');
+            list.slideDown('fast');
+        }
     });
+    /*close*/
     //js
     $(document).ready(function () {
         var link = $('.menu-link');
         var link_active = $('.menu-link_active');
-
         link.click(function () {
             link.toggleClass('menu-link_active');
         })
